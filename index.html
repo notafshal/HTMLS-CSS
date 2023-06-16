@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+  </head>
+  <body>
+    <h1>Clock</h1>
+    <button onclick="displayDate()">Click me for date</button>
+    <button onclick="displayYear()">Click me for year</button>
+    <button onclick="displaymonth()">Click me for month</button>
+    <button onclick="displayTime()">Click me for Time</button>
+    <div style="display: flex; justify-content: space-between">
+      <p id="demo"></p>
+      <p id="demo1" style="display: none"></p>
+    </div>
+
+    <script>
+      let a = new Date();
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      function displayDate() {
+        document.getElementById("demo").innerHTML = a;
+        document.getElementById("demo1").style.display = "none";
+      }
+      function displayYear() {
+        document.getElementById("demo").innerHTML = a.getFullYear();
+        document.getElementById("demo1").style.display = "none";
+      }
+      function displaymonth() {
+        document.getElementById("demo").innerHTML = months[a.getMonth()];
+        document.getElementById("demo1").style.display = "none";
+      }
+      function displayTime() {
+        document.getElementById("demo").innerHTML = a.getHours();
+        document.getElementById("demo1").innerHTML = a.getMinutes();
+        document.getElementById("demo1").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
